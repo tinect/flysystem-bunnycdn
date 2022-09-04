@@ -2,14 +2,16 @@ name: build
 
 on:
   push:
-    branches: [ master, v1, v2, v3 ]
-  pull_request:
-    branches: [ master, v1, v2, v3 ]
+    branches:
+      - v1
+  schedule:
+      - cron: '15 * * * *'
 
 jobs:
   build:
     runs-on: 'ubuntu-latest'
     strategy:
+      max-parallel: 1
       matrix:
         php-version: [ '7.4', '8.0', '8.1' ]
         composer-argument: [ ' --prefer-lowest ', '' ]
