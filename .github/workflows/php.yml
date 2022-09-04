@@ -37,9 +37,5 @@ jobs:
         STORAGEZONE: ${{ secrets.STORAGEZONE }}
         APIKEY: ${{ secrets.APIKEY }}
 
-    - uses: php-actions/phpstan@v3
-      with:
-        path: src/
-
     - name: Upload to PCOV
       run: bash <(curl -s https://codecov.io/bash)
