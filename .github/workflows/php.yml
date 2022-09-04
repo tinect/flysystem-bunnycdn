@@ -31,6 +31,9 @@ jobs:
 
     - name: Run tests
       run: vendor/bin/phpunit -c ./phpunit.xml
+      env:
+        STORAGEZONE: ${{ secrets.STORAGEZONE }}
+        APIKEY: ${{ secrets.APIKEY }}
 
     - uses: php-actions/phpstan@v3
       with:
