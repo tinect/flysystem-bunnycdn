@@ -1,6 +1,6 @@
 {
-    "name": "platformcommunity/flysystem-bunnycdn",
-    "description": "Flysystem adapter for BunnyCDN",
+    "name": "tinect/flysystem-bunnycdn",
+    "description": "Flysystem adapter for BunnyCDN. This is a temporarily productive fork of platformcommunity/flysystem-bunnycdn",
     "license": "MIT",
     "authors": [
         {
