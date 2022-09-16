@@ -288,7 +288,7 @@ class BunnyCDNAdapter extends AbstractAdapter
             'type'      => $bunny_file_array['IsDirectory'] ? 'dir' : 'file',
             'dirname'   => rtrim(Util::normalizePath(
                 str_replace(
-                    $bunny_file_array['StorageZoneName'] . '/',
+                    $bunny_file_array['StorageZoneName'] . '/' . $this->prefixPath,
                     '/',
                     $bunny_file_array['Path']
                 )
@@ -297,7 +297,7 @@ class BunnyCDNAdapter extends AbstractAdapter
             'guid' => $bunny_file_array['Guid'],
             'path'      => '/'.Util::normalizePath(
                 str_replace(
-                    $bunny_file_array['StorageZoneName'] . '/',
+                    $bunny_file_array['StorageZoneName'] . '/' . $this->prefixPath,
                     '/',
                     $bunny_file_array['Path'] . $bunny_file_array['ObjectName']
                 )
