@@ -332,7 +332,7 @@ class BunnyCDNAdapter extends AbstractAdapter
                 Util::normalizePath($path)
             )['dir']
         ) ?: [], function($item) use ($path) {
-            return Util::normalizePath($item['path']) === Util::normalizePath($path);
+            return Util::normalizePath($item['path']) === $this->removePrefix(Util::normalizePath($path));
         }));
 
         if (count($list) === 1) {
@@ -397,6 +397,19 @@ class BunnyCDNAdapter extends AbstractAdapter
     private static function parse_bunny_timestamp(string $timestamp): int
     {
         return (date_create_from_format('Y-m-d\TH:i:s.u', $timestamp) ?: date_create_from_format('Y-m-d\TH:i:s', $timestamp))->getTimestamp();
+    }
+
+    private function removePrefix(string $path): string
+    {
+        if ($this->prefixPath === '') {
+            return $path;
+        }
+
+        if (strpos($path, $this->prefixPath . '/') !== 0) {
+            return $path;
+        }
+
+        return \substr($path, \strlen($this->prefixPath . '/'));
     }
 
     private function prependPrefix(string $path): string

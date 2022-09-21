@@ -58,6 +58,7 @@ class FlysystemTestSuite extends TestCase
     public static function tearDownAfterClass(): void
     {
         self::$adapter->deleteDir('testing');
+        self::$adapter->deleteDir(static::$prefixPath);
     }
 
     public static function setUpBeforeClass(): void
@@ -190,6 +191,10 @@ class FlysystemTestSuite extends TestCase
 
         self::assertTrue(
             self::$adapter->has(self::$prefixPath . '/testing/test.txt')
+        );
+
+        self::assertTrue(
+            self::$prefixAdapter->has('/testing/test.txt')
         );
 
         self::assertTrue(
