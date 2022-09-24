@@ -37,5 +37,5 @@ jobs:
         STORAGEZONE: ${{ secrets.STORAGEZONE }}
         APIKEY: ${{ secrets.APIKEY }}
 
-    - name: Upload to PCOV
-      run: bash <(curl -s https://codecov.io/bash)
+#    - name: Upload to PCOV
+#      run: bash <(curl -s https://codecov.io/bash)
