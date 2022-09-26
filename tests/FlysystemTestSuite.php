@@ -580,4 +580,11 @@ class FlysystemTestSuite extends TestCase
         $this->assertCount(2, $response);
     }
 
+    public function test_json_file() {
+        $content = '{"test":1}';
+        $this->givenItHasFile(self::$adapter, '/testing/test.json', $content);
+
+        self::assertSame($content, self::$adapter->read('/testing/test.json')['contents']);
+    }
+
 }
