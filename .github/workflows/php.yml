@@ -17,7 +17,7 @@ jobs:
         composer-argument: [ ' --prefer-lowest ', '' ]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Setup PHP with PCOV
       uses: shivammathur/setup-php@v2
