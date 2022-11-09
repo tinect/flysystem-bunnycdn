@@ -1,1 +1,1 @@
-This is a temporarily productive fork of [platformcommunity/flysystem-bunnycdn](https://github.com/PlatformCommunity/flysystem-bunnycdn) to have a complete version for flysystem V1 which will be removed when https://github.com/PlatformCommunity/flysystem-bunnycdn/pull/38 is merged and a new release is tagged
+This is based on the work of [platformcommunity/flysystem-bunnycdn](https://github.com/PlatformCommunity/flysystem-bunnycdn), but with better v1-support.
